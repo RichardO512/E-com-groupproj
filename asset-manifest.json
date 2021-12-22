@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/E-com-groupproj/static/css/main.e6c13ad2.css",
+    "main.js": "/E-com-groupproj/static/js/main.597e8237.js",
+    "static/js/787.7d1a53e7.chunk.js": "/E-com-groupproj/static/js/787.7d1a53e7.chunk.js",
+    "index.html": "/E-com-groupproj/index.html",
+    "main.e6c13ad2.css.map": "/E-com-groupproj/static/css/main.e6c13ad2.css.map",
+    "main.597e8237.js.map": "/E-com-groupproj/static/js/main.597e8237.js.map",
+    "787.7d1a53e7.chunk.js.map": "/E-com-groupproj/static/js/787.7d1a53e7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.597e8237.js"
+  ]
+}
