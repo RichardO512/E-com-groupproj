@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
    Divider,
    Drawer,
@@ -9,6 +10,7 @@ import {
    makeStyles,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,8 +38,8 @@ function DrawerComponent() {
             <List>
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/" className={classes.link}>
-                        Home{' '}
+                     <Link className="nav-link" to="/E-com-groupproj">
+                        Home
                      </Link>
                   </ListItemText>
                </ListItem>
@@ -45,18 +47,24 @@ function DrawerComponent() {
 
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/about" className={classes.link}>
-                        About{' '}
-                     </Link>
+                     <HashLink
+                        className="nav-link"
+                        to="/E-com-groupproj#services"
+                     >
+                        Services
+                     </HashLink>
                   </ListItemText>
                </ListItem>
                <Divider />
 
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/contact" className={classes.link}>
-                        Contact Us
-                     </Link>
+                     <HashLink
+                        className="nav-link"
+                        to="/E-com-groupproj#aboutUs"
+                     >
+                        About Us
+                     </HashLink>
                   </ListItemText>
                </ListItem>
                <Divider />
@@ -64,7 +72,7 @@ function DrawerComponent() {
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
                      <Link to="/faq" className={classes.link}>
-                        FAQs
+                        FAQ
                      </Link>
                   </ListItemText>
                </ListItem>
@@ -72,8 +80,8 @@ function DrawerComponent() {
 
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/example" className={classes.link}>
-                        Example
+                     <Link className="nav-link" to="/logIn">
+                        Login
                      </Link>
                   </ListItemText>
                </ListItem>
@@ -81,9 +89,12 @@ function DrawerComponent() {
 
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link to="/cardprofile" className={classes.link}>
-                        Example
-                     </Link>
+                     <HashLink
+                        className="nav-link"
+                        to="/E-com-groupproj#contactUs"
+                     >
+                        Contact Us
+                     </HashLink>
                   </ListItemText>
                </ListItem>
                <Divider />

@@ -1,25 +1,32 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-// import About from './components/pages/About';
-// import Contact from './components/pages/Contact';
-// import Faq from './components/pages/Faq';
-// import Example from './components/pages/Example';
-// import Cardprofile from './components/Cardprofile';
+import Transcriptions from './pages/Transcriptions';
+import Login from './pages/Login';
+import Faq from './pages/Faq';
+// import ScrollToTop from './components.ScrolltoTop';
 
 function App() {
    return (
       <Router>
-         <Navbar />
-         <Home />
-         <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            {/* <Route exact path="/about" element={<About />}></Route>
-            <Route exact path="/contact" element={<Contact />}></Route>
-            <Route exact path="/faq" element={<Faq />}></Route>
-            <Route exact path="/example" element={<Example />}></Route>
-            <Route exact path="/cardprofile" element={<Cardprofile />}></Route> */}
-         </Routes>
+         <div className="App">
+            <Navbar />
+
+            <div className="content">
+               <Routes>
+                  <Route exact path="/E-com-groupproj" element={<Home />} />
+
+                  <Route
+                     exact
+                     path="/transcription"
+                     element={<Transcriptions />}
+                  ></Route>
+                  <Route exact path="/faq" element={<Faq />}></Route>
+                  <Route exact path="/login" element={<Login />}></Route>
+               </Routes>
+            </div>
+         </div>
       </Router>
    );
 }
