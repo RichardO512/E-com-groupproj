@@ -1,24 +1,46 @@
-import React from 'react';
+import { makeStyles } from '@material-ui/core';
+// import React from 'react';
+import bg1 from '../components/images/bg1.png';
+import icon1 from '../components/images/icon1.png';
+import PageTitle from '../components/PageTitle';
+import CardComponent from '../components/CardComponent';
+import Box from '@mui/material/Box';
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+
+const useStyles = makeStyles(() => ({
+   serviceBg: {
+      height: '100vh',
+      backgroundImage: `url(${bg1})`,
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      marginTop: '-1.4rem',
+   },
+
+   title: {
+      fontSize: '6rem',
+      color: '#440a67',
+   },
+
+   serviceBox: {
+      display: 'flex',
+   }
+}));
+
+
 
 function Services() {
+   const classes = useStyles();
+
    return (
-      <div id="services">
-         <h1>Service component</h1>
-         <p>
-            "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat."
-         </p>
+      <div id="services" className={classes.serviceBg}>
+         <PageTitle title="Services" />
+         <CardComponent/>
       </div>
    );
 }

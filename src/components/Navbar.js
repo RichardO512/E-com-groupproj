@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './images/logo.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-scroll';
 import {
    AppBar,
    Toolbar,
@@ -13,25 +14,26 @@ import {
 import DrawerComponent from './Drawercomponent';
 
 const useStyles = makeStyles((theme) => ({
-
    navbar: {
       backgroundColor: '#440a67',
+
    },
    navlink: {
-      marginLeft: theme.spacing(30),
+      marginLeft: theme.spacing(75),
       display: 'flex',
    },
    logo: {
       cursor: 'pointer',
+      marginLeft: theme.spacing(5),
    },
    link: {
       textDecoration: 'none',
       color: 'white',
-      fontSize: '1.1rem',
+      fontSize: '1rem',
       marginLeft: theme.spacing(3),
+      cursor: 'pointer',
       '&:hover': {
          borderBottom: '2px solid #d74d63',
-         
       },
    },
 }));
@@ -41,58 +43,74 @@ function Navbar() {
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
    return (
-      <AppBar position="fixed" className={classes.navbar}>
+      <AppBar position="static" className={classes.navbar}>
          <CssBaseline />
          <Toolbar>
-            <Link
-               className="nav-link"
-               to="/E-com-groupproj"
-            
-            >
+            <NavLink className="nav-link" to="/E-com-groupproj">
                <img src={logo} alt="Company Logo" className={classes.logo} />
-            </Link>
+            </NavLink>
             {isMobile ? (
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                  <Link
+                  <NavLink
                      className="nav-link"
                      to="/E-com-groupproj"
                      className={classes.link}
                   >
                      Home
-                  </Link>
-                  <HashLink
-                     className="nav-link"
-                     to="/E-com-groupproj#services"
+                  </NavLink>
+             
+
+                  <Link
+                     to="services"
                      className={classes.link}
+                     activeClass="active"
+                     spy={true}
+                     smooth={true}
+                     offset={-60}
+                     duration={500}
                   >
                      Services
-                  </HashLink>
-                  <HashLink
-                     className="nav-link"
-                     to="/E-com-groupproj#aboutUs"
-                     className={classes.link}
-                  >
-                     About Us
-                  </HashLink>
-                  <Link to="/faq" className={classes.link}>
-                     FAQs
                   </Link>
                   <Link
+                     to="aboutUs"
+                     className={classes.link}
+                     activeClass="active"
+                     spy={true}
+                     smooth={true}
+                     offset={-60}
+                     duration={500}
+                  >
+                     About Us
+                  </Link>
+                  <NavLink to="/faq" className={classes.link}>
+                     FAQs
+                  </NavLink>
+                  <NavLink
                      className="nav-link"
                      to="/logIn"
                      className={classes.link}
                   >
                      Login
-                  </Link>
-                  <HashLink
+                  </NavLink>
+                  {/* <HashLink
                      className="nav-link"
                      to="/E-com-groupproj#contactUs"
                      className={classes.link}
                   >
                      Contact Us
-                  </HashLink>
+                  </HashLink> */}
+                  <Link
+                     to="contactUs"
+                     className={classes.link}
+                     activeClass="active"
+                   
+                     spy={true}
+                     smooth={true}
+                     offset={-60}
+                     duration={500}
+                  >Contact Us</Link>
                </div>
             )}
          </Toolbar>

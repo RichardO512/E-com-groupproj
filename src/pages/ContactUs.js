@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContactUs() {
     return (
-        <div>
+        <div id='contactUs'>
             <h1>ContactUs</h1>
             <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
