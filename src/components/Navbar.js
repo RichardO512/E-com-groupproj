@@ -43,7 +43,7 @@ function Navbar() {
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
    return (
-      <AppBar position="static" className={classes.navbar}>
+      <AppBar position="sticky" className={classes.navbar}>
          <CssBaseline />
          <Toolbar>
             <NavLink className="nav-link" to="/E-com-groupproj">

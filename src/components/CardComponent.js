@@ -1,81 +1,80 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import { makeStyles } from '@material-ui/core';
-import { Box } from '@mui/system';
+
+import { makeStyles, CardContent, Grid, Typography, Card } from '@material-ui/core';
+
+import { styled } from '@mui/material/styles';
 
 const cardContents = [
    {
       cardImg:
-         'https://cdn-icons.flaticon.com/png/512/3293/premium/3293810.png?token=exp=1640925326~hmac=5874d42f18f798352ab04341aaf2fcfd',
+         'https://cdn-icons.flaticon.com/png/512/3293/premium/3293810.png?token=exp=1641038936~hmac=6b33877e5c06a2a69dddcfe2cad2ef62',
       cardTitle: 'Title1',
-      cardDescription: 'service for bla bla blaservice for bla bla bla',
+      cardDescription: 'service for bla bla blaservice for service for bla bla blaservice for bla bla bla bla bla bla',
    },
    {
       cardImg:
-         'https://cdn-icons.flaticon.com/png/512/3270/premium/3270234.png?token=exp=1640925374~hmac=0031fba99424ae0e2d2eaa0cc5680e71',
+         'https://cdn-icons.flaticon.com/png/512/3293/premium/3293810.png?token=exp=1641038936~hmac=6b33877e5c06a2a69dddcfe2cad2ef62',
       cardTitle: 'Title2',
-      cardDescription: 'service for bla bla blaservice for bla bla bla',
+      cardDescription: 'service for bla bla blaservice for blservice for bla bla blaservice for bla bla blaa bla bla',
    },
    {
       cardImg:
-         'https://cdn-icons.flaticon.com/png/512/1895/premium/1895657.png?token=exp=1640925382~hmac=c86745a4ffc703334e17dfe17283e255',
+         'https://cdn-icons.flaticon.com/png/512/3293/premium/3293810.png?token=exp=1641038936~hmac=6b33877e5c06a2a69dddcfe2cad2ef62',
       cardTitle: 'Title3',
-      cardDescription: 'service for bla bla blaservice for bla bla bla',
+      cardDescription: 'service for bla bla blaservice for bla bla blservice for bla bla blaservice for bla bla blaa',
    },
 ];
 
 const useStyles = makeStyles(() => ({
-   imgIcon: {
-      width: '8rem',
-      height: '8rem',
-   },
-   container: {
-      display: 'flex',
-      justifyContent: 'center',
-      
-
+   imageContainer: {
+      height: '140px',
    },
 
-   cardContent: {
-      margin: '2rem',
-      height: 320,
-      backgroundColor: '#ffe3fe',
-      display: 'flex',
-      backgroundColor: 'red',
+   image: {
+      height: '120px',
+      width: '120px',
+      padding: '1.5rem',
+      marginLeft: '25%',
+   },
+
+   card: {
+      height: '50vh'
    }
 }));
 
 function CardComponent() {
    const classes = useStyles();
+
    return (
-      <Box className={classes.container}>
-            {cardContents.map((item) => (
-         <Card sx={{ maxWidth: 250 }} className={classes.cardContent}>
-               <CardActionArea>
-                  <div>
-                     <img
-                        src={item.cardImg}
-                        alt="icon"
-                        className={classes.imgIcon}
-                     />
+      <Grid container direction="row" justifyContent="center" spacing={8}>
+         {cardContents.map((item) => (
+            <Grid item xs={7} md={3}>
+               <Card sx={{maxWidth: 250}} className={classes.card}>
+                  <div className={classes.imageContainer}>
+                     <img src={item.cardImg} className={classes.image} />
                   </div>
 
                   <CardContent>
-                     <Typography gutterBottom variant="h5" component="div">
+                     <Typography
+                        gutterBottom
+                        variant="h4"
+                        component="div"
+                        align="center"
+                     >
                         {item.cardTitle}
                      </Typography>
-                     <Typography variant="body2" color="text.secondary">
+                     <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        align="center"
+                     >
                         {item.cardDescription}
                      </Typography>
                   </CardContent>
-               </CardActionArea>
-            </Card>
-            ))}
-      </Box>
+               </Card>
+            </Grid>
+         ))}
+      </Grid>
    );
 }
 

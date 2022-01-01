@@ -4,6 +4,7 @@ import Services from '../pages/Services';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import flute from '../components/images/flute.jpg';
+import PageTitle from '../components/PageTitle';
 
 
 const useStyles = makeStyles(() => ({
@@ -12,6 +13,7 @@ const useStyles = makeStyles(() => ({
       backgroundImage: `url(${flute})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
    },
 
    
@@ -19,8 +21,7 @@ const useStyles = makeStyles(() => ({
 
 
    heroHeading: {
-      fontSize: '6rem',
-      color: '#fff1ff',
+      color: 'white',
    },
 }));
 
@@ -31,7 +32,7 @@ function Home() {
       <div id="home">
          <div className={classes.hero}>
             <div>
-               <h1 className={classes.heroHeading}>Main Heading Something</h1>
+               <PageTitle title="hello" color="white"/>
             </div>
          </div>
    

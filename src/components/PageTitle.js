@@ -1,5 +1,11 @@
 import React from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import {
+   makeStyles,
+   Typography,
+   createTheme,
+   responsiveFontSizes,
+   MuiThemeProvider,
+} from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
    title: {
@@ -7,14 +13,17 @@ const useStyles = makeStyles(() => ({
    },
 }));
 
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
+
 function PageTitle(props) {
    const classes = useStyles();
    return (
-      <>
-         <Typography align="center" variant="h2" className={classes.title}>
+      <MuiThemeProvider theme={theme}>
+         <Typography variant="h3" align="center" className={classes.title}>
             <h1>{props.title}</h1>
          </Typography>
-      </>
+      </MuiThemeProvider>
    );
 }
 
