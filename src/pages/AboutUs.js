@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 function AboutUs() {
    return (
       <div>
-        <Header></Header>
+        
       </div>
    )
 }
