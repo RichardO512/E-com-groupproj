@@ -4,7 +4,7 @@ import {
    Typography,
    createTheme,
    responsiveFontSizes,
-   MuiThemeProvider,
+   ThemeProvider,
 } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
@@ -19,11 +19,11 @@ theme = responsiveFontSizes(theme);
 function PageTitle(props) {
    const classes = useStyles();
    return (
-      <MuiThemeProvider theme={theme}>
-         <Typography variant="h3" align="center" className={classes.title}>
-            <h1>{props.title}</h1>
+      <ThemeProvider theme={theme}>
+         <Typography variant="h1" component="h1" align="center" className={classes.title}>
+            {props.title}
          </Typography>
-      </MuiThemeProvider>
+      </ThemeProvider>
    );
 }
 

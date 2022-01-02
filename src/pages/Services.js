@@ -7,7 +7,6 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
    serviceBg: {
       minHeight: '100vh',
-      marginTop: '-1.4rem',
    },
 
 
