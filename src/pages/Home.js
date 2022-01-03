@@ -5,7 +5,8 @@ import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import music from '../components/images/music.jpg';
 import PageTitle from '../components/PageTitle';
-
+import Team from "./Team";
+import Footer from "./Footer";
 const useStyles = makeStyles(() => ({
    hero: {
       height: '100vh',
@@ -29,7 +30,9 @@ function Home() {
 
          <Services />
          <AboutUs />
+         <Team />
          <ContactUs />
+         <Footer />
       </div>
    );
 }

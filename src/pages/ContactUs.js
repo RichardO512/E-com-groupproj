@@ -1,22 +1,43 @@
 import React from 'react'
-
+import "../components/styles/ContactUs.css";
+// import bg2 from '../components/images/bg2.png';
 function ContactUs() {
     return (
         <div id='contactUs'>
-            <h1>ContactUs</h1>
-            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat."</p>
+            <div className="contactme" id="contact">
+                <div className="contactOverlay">
+                    <div className="container">
+                        <div className="form">
+                            <form action="" onSubmit="">
+                                <div className="formWord">
+                                    <h2>Say Hello!</h2>
+                                    <span>Full Name</span>
+                                    <br />
+                                    <input className="input100" type="text" name="fullName" id="fullname" required />
+                                    <br />
+                                    <span>Phone Number</span>
+                                    <br />
+                                    <input className="input100" type="text" name="phone" id="phone" required />
+                                    <br />
+                                    <span>Enter Email</span>
+                                    <br />
+                                    <input className="input100" type="text" name="email" id="email" required />
+                                    <br />
+                                </div>
+                                <div className="formWord">
+                                    <span>Message</span>
+                                    <br />
+                                    <textarea name="message" id="message" required></textarea>
+                                    <br />
+                                    <button>SUBMIT</button>
+
+                                    {/* <div className="row">All Done</div> */}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
