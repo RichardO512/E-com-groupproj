@@ -8,8 +8,8 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-   title: {
-      color: '#440a67',
+   pageTitle: {
+      padding: '3rem 0'
    },
 }));
 
@@ -20,7 +20,7 @@ function PageTitle(props) {
    const classes = useStyles();
    return (
       <ThemeProvider theme={theme}>
-         <Typography variant="h1" component="h1" align="center" className={classes.title}>
+         <Typography variant="h1" component="h1" align="center" className={classes.pageTitle}>
             {props.title}
          </Typography>
       </ThemeProvider>

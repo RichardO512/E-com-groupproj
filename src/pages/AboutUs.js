@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles, Typography, Grid } from '@material-ui/core';
+import { makeStyles, Typography, Grid, Box, Item } from '@material-ui/core';
 import bg2 from '../components/images/bg2.png';
+import PageTitle from '../components/PageTitle';
 
 const useStyles = makeStyles(() => ({
    aboutUsBg: {
-      height: '100vh',
+      minHeight: '100vh',
       backgroundImage: `url(${bg2})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -12,28 +13,51 @@ const useStyles = makeStyles(() => ({
    },
 
    header: {
-      paddingTop: '4rem',
-      paddingLeft: '10rem',
       color: '#ffe3fe',
+      marginLeft: '10rem',
+      padding: '3rem 0 1.5rem 0',
    },
    pageDescription: {
-      paddingLeft: '10rem',
       color: '#ffe3fe',
-   }
+      lineHeight: '2rem',
+      marginLeft: '10rem',
+   },
+   box1: {
+      width: '120px',
+      height: '120px',
+      backgroundColor: '#d74d63',
+      margin: '3rem',
+   },
 }));
 
 function AboutUs() {
    const classes = useStyles();
    return (
-      <div id='aboutUs'>
-
-     
-      <Grid className={classes.aboutUsBg}>
-         <Typography variant="h1" className={classes.header}>About Us</Typography>
-         <Typography variant="subtitle" className={classes.pageDescription}>
-            About Us Description with sentences
+      <div id="aboutUs" className={classes.aboutUsBg}>
+         <Typography variant="h1" component="h1" className={classes.header}>
+            About Us
          </Typography>
-      </Grid>
+
+         <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+               <Grid xs={12} md={7}>
+                  <Typography className={classes.pageDescription} align="left">
+                     "At vero eos et accusamus et iusto odio dignissimos ducimus
+                     qui blanditiis praesentium voluptatum deleniti atque
+                     corrupti quos dolores et quas molestias excepturi sint
+                     occaecati cupiditate non provident, similique sunt in culpa
+                     qui officia deserunt mollitia animi, id est laborum et
+                     dolorum fuga. Et harum quidem rerum facilis est et expedita
+                     distinctio. Nam libero tempore, cum soluta nobis est
+                     eligendi optio cumque nihil impedit quo minus id quod
+                     maxime placeat.
+                  </Typography>
+               </Grid>
+               <Grid xs={6} md={5}>
+                  <div  className={classes.box1}>Design</div>
+               </Grid>
+            </Grid>
+         </Box>
       </div>
    );
 }

@@ -37,9 +37,6 @@ const useStyles = makeStyles(() => ({
       marginLeft: '25%',
    },
 
-   card: {
-      height: '50vh'
-   }
 }));
 
 function CardComponent() {

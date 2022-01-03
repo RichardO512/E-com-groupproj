@@ -1,27 +1,18 @@
-import { makeStyles} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import Services from '../pages/Services';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
-import flute from '../components/images/flute.jpg';
+import music from '../components/images/music.jpg';
 import PageTitle from '../components/PageTitle';
-
 
 const useStyles = makeStyles(() => ({
    hero: {
       height: '100vh',
-      backgroundImage: `url(${flute})`,
+      backgroundImage: `url(${music})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-   },
-
-   
-
-
-
-   heroHeading: {
-      color: 'white',
    },
 }));
 
@@ -32,10 +23,10 @@ function Home() {
       <div id="home">
          <div className={classes.hero}>
             <div>
-               <PageTitle title="hello" color="white"/>
+               <PageTitle title="hello" />
             </div>
          </div>
-   
+
          <Services />
          <AboutUs />
          <ContactUs />
