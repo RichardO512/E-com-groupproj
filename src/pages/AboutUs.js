@@ -23,11 +23,19 @@ const useStyles = makeStyles(() => ({
       marginLeft: '10rem',
    },
    box1: {
-      width: '120px',
-      height: '120px',
+      width: '150px',
+      height: '150px',
       backgroundColor: '#d74d63',
-      margin: '3rem',
+      margin: '2rem 0 0 4rem',
    },
+   box2: {
+      width: '200px',
+      height: '200px',
+      backgroundColor: '#ffe3fe',
+      marginLeft: '-8.5rem',
+   },
+
+
 }));
 
 function AboutUs() {
@@ -54,7 +62,12 @@ function AboutUs() {
                   </Typography>
                </Grid>
                <Grid xs={6} md={5}>
-                  <div  className={classes.box1}>Design</div>
+                  <div  className={classes.box1}>
+                     <Typography>Hello</Typography>
+                  </div>
+                  <div  className={classes.box2}>
+                     <Typography className={classes.boxContent}>There</Typography>
+                  </div>
                </Grid>
             </Grid>
          </Box>
